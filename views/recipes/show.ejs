@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View one Recipe in Detail !</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        BODY {
+            background-color: #fff;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff4f81;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .recipe_card {
+            background-color: #fff;
+            color: #222;
+            width: 420px;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s ease;
+            border: 1px solid black;
+        }
+        .recipe_card:hover {
+            transform: translateY(-5px);
+        }
+        p {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        strong {
+            color: #ff4500;
+        }
+        button {
+            background-color: linear-gradient(135deg, #ff4f81, #ff6f00);
+            color: black;
+            font-weight: 600;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color: #ff4f81;
+            transform: scale(1.03);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="recipe_card">
+
+    <h1>RECIPE CARD</h1>
+    <p><strong>Recipe Name : </strong><%=recipe.name%></p>
+    <!-- <p><strong>Recipe Id : </strong><%=recipe.id%></p> -->
+    <p><strong>Recipe Description : </strong><%=recipe.description%></p>
+    <p><strong>Recipe Ingredients : </strong><%=recipe.ingredients%></p>
+    <p><strong>Recipe Instructions : </strong><%=recipe.instructions%></p>
+    <a href="/recipes"><button>Back to Recipe List</button></a>
+
+    </div>
+</body>
+</html>

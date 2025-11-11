@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW ALL RECIPES</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SHOW ALL RECIPES 😋</h1>
+            <a class="cta" href="/recipes/new">Add Recipe</a>
+            <!-- It Will send a Req to Backend through GET method - Showing Form After Click -->
+        </div>
+
+        <% if (recipes.length===0) { %> <!--IF THE TABLE IS EMPTY THEN IT WILL SHOW THIS MESSAGE-->
+
+            <div class="empty">No recipes yet — add one with the button above.</div>
+
+            <% } else { %>
+
+                <div class="recipe-list">
+                    <!-- USING FOR LOOP - HERE RECIPE IS ACTING AS THE ARRAY OF OBJECTS -->
+                    <% recipes.forEach(recipe=> { %>
+                        <!-- MAKE A CARD FOR EACH RECIPE -->
+                        <div class="recipe-card">
+                            <!-- ID OF THE RECIPE -->
+                            <div class="recipe-id">(<%= recipe.id %>)</div>
+                            <!-- NAME OF THE RECIPE -->
+                            <h3 class="recipe-title">
+                                <%= recipe.name %>
+                            </h3>
+                            <!-- DESCRIPTION OF THE RECIPE -->
+                            <p class="recipe-desc">
+                                <%= recipe.description %>
+                            </p>
+
+                            <!-- INGREDIENTS AND INSTRUCTIONS OF THE RECIPE -->
+                            <div class="meta">
+                                <strong>Ingredients:</strong>  
+                                <%= recipe.ingredients %><br>
+                                <strong>Instructions:</strong>
+                                <%= recipe.instructions %>
+                            </div>
+
+
+                            <!-- BUTTONS -->
+                            <div class="controls">
+                                <!-- VIEW -->
+                                <a class="btn view" href="/recipes/<%= recipe.id %>">View</a> <!-- IT WILL SEND A REQ TO BACKEND THROUGH GET METHOD WITH ON RESULT ID -->
+                                <!-- EDIT -->
+                                <a class="btn edit" href="/recipes/<%= recipe.id %>/edit">Edit</a>
+                                <!-- DELETE -->
+                                <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST"
+                                    style="display:inline">
+                                    <button class="btn delete" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } %>
+    </div>
+</body>
+
+</html>
