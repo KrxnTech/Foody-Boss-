@@ -81,6 +81,4 @@ food-manager/
 
 A calm and beginner-friendly recipe manager built to practice CRUD operations, routing, EJS templating, frontend styling, and MySQL integration.
 
----
 
-If you want, I can also create **badges**, **demo GIF**, or **deployment section**.
