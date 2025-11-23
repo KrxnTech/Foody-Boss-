@@ -1,6 +1,3 @@
-
----
-
 # 🍽️ Food Manager
 
 A simple and relaxing recipe management web app where you can add, view, edit, and delete recipes with ease. Designed with a clean UI and smooth user experience that makes cooking feel just a bit less chaotic.
@@ -22,7 +19,8 @@ A simple and relaxing recipe management web app where you can add, view, edit, a
 
 Here’s how your recipe cards look in the app:
 
-![Recipe Preview](/mnt/data/0f243f51-0b41-47f7-b532-ac756602e56a.png)
+<img width="1444" height="813" alt="image" src="https://github.com/user-attachments/assets/44ee057e-88bb-4801-8177-37dd66e27274" />
+
 
 ---
 
